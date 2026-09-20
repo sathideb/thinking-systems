@@ -1,4 +1,4 @@
-# System Thinking
+# Thinking-system
 
 A collection of small technical learnings from building systems.
 
