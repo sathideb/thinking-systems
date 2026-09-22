@@ -1,44 +1,32 @@
-# Thinking-system
+# System Thinking
 
-A collection of small technical learnings from building systems.
+A collection of technical notes and mental models built while engineering systems.
 
-This repository contains my notes on things I encounter while building, debugging, and understanding systems — mainly through my own projects.
+This repository captures the thoughts, reasoning, and debugging processes I worked through while building systems — primarily in the context of my own projects. 
 
-The goal is not to collect definitions, The goal is to understand why something works the way it does.
+I don't focus on textbook definitions; I focus on **why** things are designed the way they are.
 
-## What I write here
+---
 
-Whenever I encounter a concept that makes me stop and think, I write down what I understood.
+## What is in this repository
 
-For example:
+Whenever a project forces a deep dive or triggers an interesting realization, I document it here:
 
-- B+ Tree splitting
-- B+ Tree deletion
-- Indexing
-- Concurrency
-- Persistence
-- Memory layout
-- HNSW
-- Vector search
-- Storage
-- Other system-level concepts
+* **Indexes & Trees:** B+ Tree splitting, B+ Tree deletion, HNSW
+* **Storage & Memory:** Memory layout, page sizing, persistence
+* **System Design:** Concurrency, vector search, and core storage mechanics
 
-The notes may be short or long depending on how much there is to understand.
+Notes vary from quick engineering logs to detailed design breakdowns depending on the complexity of the topic.
 
-## Connection to my projects
+---
 
-Most of these learnings come from actually building systems.
+## Relationship to my projects
 
-For example, while building my Vector DB, I may encounter:
+These notes stem directly from hands-on projects. For example, while building my **vector database**, I had to handle B+ Tree node splitting:
+* What exactly triggers a split?
+* How much data fits onto a single 4KB page?
+* What updates must be propagated to the parent node after a split?
 
-- B+ Tree node becomes full
-- Why does it split?
-- What happens with a 4KB page?
-- What happens to the parent?
-- What invariants must be preserved?
+While the implementation lives in the project source code, the architectural reasoning belongs here.
 
-Instead of keeping that understanding only inside the project code, I extract the underlying idea here.
-
-The implementation belongs to the project.
-
-The reasoning belongs here.
+> **Code lives in the project. The mental model lives here.**
