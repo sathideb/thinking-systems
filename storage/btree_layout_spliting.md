@@ -27,10 +27,10 @@ Operating systems read from and write to the disk in fixed-size 4 KB pages. When
 constexpr int MAX_KEYS = 454; // Upper limit of keys to keep the struct under 4KB
 
 struct BTreeNode {
-    bool     is_leaf;               // 1 byte: true if it's a leaf node, false if internal
+    bool is_leaf;               // 1 byte: true if it's a leaf node, false if internal
     uint16_t num_keys;              // 2 bytes: tracks current number of keys present in this node
     int32_t  keys[MAX_KEYS];        // 454 * 4 = 1816 bytes: stores the actual sorted key values
-    bool     tombstone[MAX_KEYS];   // 454 * 1 = 454 bytes: soft-delete flag (true means logically deleted)
+    bool tombstone[MAX_KEYS];   // 454 * 1 = 454 bytes: soft-delete flag (true means logically deleted)
     uint32_t children[MAX_KEYS + 1];// 455 * 4 = 1820 bytes: stores child page IDs for navigation
 };
 static_assert(sizeof(BTreeNode) <= 4096, "the node layout exceeds the 4KB page size!");
