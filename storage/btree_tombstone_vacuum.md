@@ -1,4 +1,5 @@
-# Tombstone Soft Deletion and `vacuum()` in VeloDB
+# Tombstone Soft Deletion and `vacuum()` in VectorDB
+**Note: The design and implementation details documented here may evolve in future iterations as I explore and benchmark better approaches, but the core architectural concepts and trade-offs remain the same.**
 
 ## The problem I'm solving
 
@@ -91,4 +92,4 @@ Suppose the user deletes key 50, so it is tombstoned. If `vacuum()` removed it, 
 
 So 50 stays. It still does its routing job, and `search(50)` returns "not found" because of the tombstone flag.
 
-**Note: The design and implementation details documented here may evolve in future iterations as I explore and benchmark better approaches, but the core architectural concepts and trade-offs remain the same.**
+
